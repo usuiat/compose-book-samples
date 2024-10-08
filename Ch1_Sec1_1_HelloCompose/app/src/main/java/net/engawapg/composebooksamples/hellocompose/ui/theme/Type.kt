@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1_sec1_1_hellocompose.ui.theme
+package net.engawapg.composebooksamples.hellocompose.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

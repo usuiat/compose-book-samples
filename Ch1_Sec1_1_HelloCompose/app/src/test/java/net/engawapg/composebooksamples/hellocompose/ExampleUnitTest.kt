@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1.sec2.databinding
+package net.engawapg.composebooksamples.hellocompose
 
 import org.junit.Test
 

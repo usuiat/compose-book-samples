@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "net.engawapg.composebooksamples.ch1.sec2.databinding"
+    namespace = "net.engawapg.composebooksamples.databinding"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "net.engawapg.composebooksamples.ch1.sec2.databinding"
+        applicationId = "net.engawapg.composebooksamples.databinding"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

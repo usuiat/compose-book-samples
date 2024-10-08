@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "net.engawapg.composebooksamples.ch1_sec1_1_hellocompose"
+    namespace = "net.engawapg.composebooksamples.hellocompose"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "net.engawapg.composebooksamples.ch1_sec1_1_hellocompose"
+        applicationId = "net.engawapg.composebooksamples.hellocompose"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

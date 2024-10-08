@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1_sec1_2_helloview
+package net.engawapg.composebooksamples.helloview
 
 import android.os.Bundle
 import android.view.View.VISIBLE

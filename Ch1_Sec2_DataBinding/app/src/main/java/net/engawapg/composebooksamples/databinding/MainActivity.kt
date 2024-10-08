@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1.sec2.databinding
+package net.engawapg.composebooksamples.databinding
 
 import android.os.Bundle
 import android.view.View.INVISIBLE
@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import net.engawapg.composebooksamples.ch1.sec2.databinding.databinding.ActivityMainBinding
+import net.engawapg.composebooksamples.databinding.databinding.ActivityMainBinding
 
 class UiModel {
     private var _textVisibility = MutableLiveData(INVISIBLE)

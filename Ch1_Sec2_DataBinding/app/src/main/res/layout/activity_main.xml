@@ -5,7 +5,7 @@
     <data>
         <variable
             name="uiModel"
-            type="net.engawapg.composebooksamples.ch1.sec2.databinding.UiModel" />
+            type="net.engawapg.composebooksamples.databinding.UiModel" />
     </data>
 
     <LinearLayout

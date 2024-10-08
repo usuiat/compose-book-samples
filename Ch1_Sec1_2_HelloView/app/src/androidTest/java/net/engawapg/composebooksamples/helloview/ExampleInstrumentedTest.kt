@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1_sec1_1_hellocompose
+package net.engawapg.composebooksamples.helloview
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,9 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals(
-            "net.engawapg.composebooksamples.ch1_sec1_1_hellocompose",
-            appContext.packageName
-        )
+        assertEquals("net.engawapg.composebooksamples.helloview", appContext.packageName)
     }
 }

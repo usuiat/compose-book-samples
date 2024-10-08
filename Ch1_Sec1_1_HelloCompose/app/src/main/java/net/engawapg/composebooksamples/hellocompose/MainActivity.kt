@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.ch1_sec1_1_hellocompose
+package net.engawapg.composebooksamples.hellocompose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,8 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import net.engawapg.composebooksamples.ch1_sec1_1_hellocompose.ui.theme.Ch1_Sec1_1_HelloComposeTheme
+import net.engawapg.composebooksamples.hellocompose.ui.theme.Ch1_Sec1_1_HelloComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
