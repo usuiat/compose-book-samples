@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.composemechanismsample
+package net.engawapg.composebooksamples.coroutinessample
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
