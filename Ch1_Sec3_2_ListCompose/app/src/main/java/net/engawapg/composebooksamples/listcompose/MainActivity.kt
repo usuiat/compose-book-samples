@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import net.engawapg.composebooksamples.listcompose.ui.theme.Ch1_Sec3_2_ListComposeTheme
+import net.engawapg.composebooksamples.listcompose.ui.theme.ListComposeTheme
 
 val countriesList = listOf(
     "Japan",
@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch1_Sec3_2_ListComposeTheme {
+            ListComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         CountriesList()

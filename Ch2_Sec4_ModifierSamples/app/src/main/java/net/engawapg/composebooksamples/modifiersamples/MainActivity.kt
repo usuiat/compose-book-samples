@@ -20,14 +20,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.modifiersamples.ui.theme.Ch2_Sec4_ModifierSamplesTheme
+import net.engawapg.composebooksamples.modifiersamples.ui.theme.ModifierSamplesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch2_Sec4_ModifierSamplesTheme {
+            ModifierSamplesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         ModifierSample()

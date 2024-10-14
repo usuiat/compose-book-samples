@@ -26,14 +26,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import net.engawapg.composebooksamples.interactiveuisamples.ui.theme.Ch2_Sec6_InteractiveUiSamplesTheme
+import net.engawapg.composebooksamples.interactiveuisamples.ui.theme.InteractiveUiSamplesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch2_Sec6_InteractiveUiSamplesTheme {
+            InteractiveUiSamplesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         CounterSample()

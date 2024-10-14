@@ -17,14 +17,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import net.engawapg.composebooksamples.hellocompose.ui.theme.Ch1_Sec1_1_HelloComposeTheme
+import net.engawapg.composebooksamples.hellocompose.ui.theme.HelloComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch1_Sec1_1_HelloComposeTheme {
+            HelloComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         HelloCompose()

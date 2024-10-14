@@ -16,14 +16,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.imagesamples.ui.theme.Ch2_Sec3_2_ImageSamplesTheme
+import net.engawapg.composebooksamples.imagesamples.ui.theme.ImageSamplesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch2_Sec3_2_ImageSamplesTheme {
+            ImageSamplesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         ImageSample()

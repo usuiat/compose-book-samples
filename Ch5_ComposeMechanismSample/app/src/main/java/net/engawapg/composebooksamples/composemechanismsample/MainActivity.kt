@@ -17,14 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import net.engawapg.composebooksamples.composemechanismsample.ui.theme.Ch5_ComposeMechanismSampleTheme
+import net.engawapg.composebooksamples.composemechanismsample.ui.theme.ComposeMechanismSampleTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch5_ComposeMechanismSampleTheme {
+            ComposeMechanismSampleTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->

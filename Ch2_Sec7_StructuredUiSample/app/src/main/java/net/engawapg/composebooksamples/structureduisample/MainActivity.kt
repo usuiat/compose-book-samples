@@ -27,14 +27,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.structureduisample.ui.theme.Ch2_Sec7_StructuredUiSampleTheme
+import net.engawapg.composebooksamples.structureduisample.ui.theme.StructuredUiSampleTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch2_Sec7_StructuredUiSampleTheme {
+            StructuredUiSampleTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         val animals = listOf(

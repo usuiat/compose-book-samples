@@ -19,14 +19,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.switchcompose.ui.theme.Ch1_Sec4_SwitchComposeTheme
+import net.engawapg.composebooksamples.switchcompose.ui.theme.SwitchComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Ch1_Sec4_SwitchComposeTheme {
+            SwitchComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
