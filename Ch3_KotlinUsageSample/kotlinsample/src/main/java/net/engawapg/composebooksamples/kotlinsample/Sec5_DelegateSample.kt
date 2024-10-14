@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.kotlinusagesample
+package net.engawapg.composebooksamples.kotlinsample
 
 import kotlin.reflect.KProperty
 

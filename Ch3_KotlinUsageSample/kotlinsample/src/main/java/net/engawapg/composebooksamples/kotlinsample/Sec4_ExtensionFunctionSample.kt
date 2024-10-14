@@ -1,4 +1,4 @@
-package net.engawapg.composebooksamples.kotlinusagesample
+package net.engawapg.composebooksamples.kotlinsample
 
 fun main(args: Array<String>) {
     val hello = "Hello"
