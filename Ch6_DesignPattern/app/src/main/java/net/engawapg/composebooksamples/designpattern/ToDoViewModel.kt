@@ -1,7 +1,6 @@
 package net.engawapg.composebooksamples.designpattern
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,7 +9,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class ToDoViewModel(private val toDoModel: ToDoModel) : ViewModel() {
+class ToDoViewModel : ViewModel() {
+    private val toDoModel = ToDoModel()
     private val toDoItems: MutableStateFlow<List<ToDoItem>?> =
         MutableStateFlow(null)
 
@@ -37,14 +37,6 @@ class ToDoViewModel(private val toDoModel: ToDoModel) : ViewModel() {
             toDoModel.updateCompleted(toDoItem, completed)
             toDoItems.value = toDoModel.loadToDoItems()
         }
-    }
-
-    class Factory(
-        private val toDoModel: ToDoModel,
-    ) : ViewModelProvider.NewInstanceFactory() {
-        @Suppress("unchecked_cast")
-        override fun <T : ViewModel> create(modelClass: Class<T>) =
-            ToDoViewModel(toDoModel) as T
     }
 }
 
