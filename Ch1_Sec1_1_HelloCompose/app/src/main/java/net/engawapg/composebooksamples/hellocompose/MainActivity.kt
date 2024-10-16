@@ -37,8 +37,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HelloCompose() {
+    var isVisible by remember { mutableStateOf(false) }
     Column {
-        var isVisible by remember { mutableStateOf(false) }
         Button(onClick = { isVisible = true }) {
             Text("Button")
         }
