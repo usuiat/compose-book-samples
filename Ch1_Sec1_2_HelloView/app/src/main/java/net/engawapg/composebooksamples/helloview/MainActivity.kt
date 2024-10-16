@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val textView = findViewById<TextView>(R.id.text_view)
         val button = findViewById<Button>(R.id.button)
+        val textView = findViewById<TextView>(R.id.text_view)
 
         button.setOnClickListener {
             textView.visibility = VISIBLE
