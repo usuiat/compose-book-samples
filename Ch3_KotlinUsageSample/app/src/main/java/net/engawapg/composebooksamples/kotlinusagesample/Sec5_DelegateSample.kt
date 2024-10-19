@@ -23,7 +23,7 @@ fun runDelegateSample() {
 }
 
 class SomeClass {
-    var someValue: Int by ValueLogger()
+    var someValue: Int by OtherClass()
 
     fun twice() {
         val x = someValue
@@ -31,7 +31,7 @@ class SomeClass {
     }
 }
 
-class ValueLogger {
+class OtherClass {
     private var otherValue: Int = 0
 
     operator fun getValue(thisObj: Any?, property: KProperty<*>): Int {
