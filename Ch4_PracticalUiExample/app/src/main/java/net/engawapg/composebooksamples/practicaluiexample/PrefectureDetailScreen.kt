@@ -29,7 +29,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.practicaluiexample.ui.theme.PracticalUiExampleTheme
+import net.engawapg.composebooksamples.practicaluiexample.ui.theme.PrefecturesTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -153,7 +153,7 @@ fun PrefectureDataItem(
 @Preview
 @Composable
 fun PrefectureDetailScreenPreview() {
-    PracticalUiExampleTheme {
+    PrefecturesTheme {
         PrefectureDetailScreen(
             prefectureName = "北海道",
             onBackClick = {},
@@ -165,7 +165,7 @@ fun PrefectureDetailScreenPreview() {
 @Preview(widthDp = 300)
 @Composable
 fun PrefectureDataPreview() {
-    PracticalUiExampleTheme {
+    PrefecturesTheme {
         Box {
             PrefectureDataCard(
                 prefecture = Prefecture(

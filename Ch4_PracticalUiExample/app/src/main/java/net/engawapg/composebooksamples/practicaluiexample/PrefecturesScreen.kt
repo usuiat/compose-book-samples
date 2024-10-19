@@ -33,7 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.engawapg.composebooksamples.practicaluiexample.ui.theme.PracticalUiExampleTheme
+import net.engawapg.composebooksamples.practicaluiexample.ui.theme.PrefecturesTheme
 
 enum class ListType {
     Column, Grid
@@ -202,7 +202,7 @@ private fun ListTypeSelectionDialog(
 @Preview
 @Composable
 fun PrefecturesScreenPreview() {
-    PracticalUiExampleTheme {
+    PrefecturesTheme {
         PrefecturesScreen(
             prefectures = Prefectures,
             onPrefectureClick = {},
@@ -213,7 +213,7 @@ fun PrefecturesScreenPreview() {
 @Preview(showBackground = true)
 @Composable
 fun PrefecturesGridPreview() {
-    PracticalUiExampleTheme {
+    PrefecturesTheme {
         PrefecturesGrid(
             prefectures = Prefectures,
             onPrefectureClick = {},
@@ -224,7 +224,7 @@ fun PrefecturesGridPreview() {
 @Preview
 @Composable
 fun InformationDialogPreview() {
-    PracticalUiExampleTheme {
+    PrefecturesTheme {
         ListTypeSelectionDialog(
             listType = ListType.Column,
             onConfirm = {},
