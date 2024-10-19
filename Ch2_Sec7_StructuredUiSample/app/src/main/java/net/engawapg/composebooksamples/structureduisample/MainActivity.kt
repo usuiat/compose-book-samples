@@ -120,5 +120,5 @@ fun AnimalCard(
 
 data class Animal(
     @DrawableRes val resourceId: Int,
-    val text: String,
+    val text: String
 )
