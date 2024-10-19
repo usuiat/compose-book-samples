@@ -31,6 +31,12 @@ class MainActivity : ComponentActivity() {
 
                         // Section 3
                         LambdaSample()
+
+                        // Section 4
+                        ExtensionFunctionSample()
+
+                        // Section 5
+                        DelegateSample()
                     }
                 }
             }
