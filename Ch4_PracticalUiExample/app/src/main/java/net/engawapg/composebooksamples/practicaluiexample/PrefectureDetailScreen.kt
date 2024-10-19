@@ -116,7 +116,7 @@ fun PrefectureDataCard(
         }
         AnimatedVisibility(
             visible = expand,
-            enter =  expandIn(expandFrom = Alignment.TopStart),
+            enter = expandIn(expandFrom = Alignment.TopStart),
             exit = shrinkOut(shrinkTowards = Alignment.TopStart)
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
