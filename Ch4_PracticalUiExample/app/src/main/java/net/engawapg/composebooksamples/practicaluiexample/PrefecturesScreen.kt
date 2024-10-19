@@ -175,20 +175,18 @@ private fun ListTypeSelectionDialog(
 ) {
     AlertDialog(
         text = {
-            val text = if (listType == ListType.Column) {
-                "グリッド表示に変更しますか？"
-            } else {
-                "リスト表示に変更しますか？"
+            val text = when (listType) {
+                ListType.Column -> "グリッド表示に変更しますか？"
+                ListType.Grid -> "リスト表示に変更しますか？"
             }
             Text(text)
         },
         confirmButton = {
             TextButton(
                 onClick = {
-                    val newListType = if (listType == ListType.Column) {
-                        ListType.Grid
-                    } else {
-                        ListType.Column
+                    val newListType = when(listType) {
+                        ListType.Column -> ListType.Grid
+                        ListType.Grid -> ListType.Column
                     }
                     onConfirm(newListType)
                 }
