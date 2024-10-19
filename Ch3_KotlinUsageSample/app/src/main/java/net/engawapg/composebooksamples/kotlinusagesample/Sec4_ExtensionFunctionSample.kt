@@ -16,7 +16,7 @@ fun ExtensionFunctionSample() {
 
 fun runExtensionFunctionSample() {
     val hello = "Hello"
-    hello.printLength()
+    hello.printLengthIfNotBlank()
 
     val scope = PrintLengthScope()
     scope.checkLength("Hello")
@@ -24,7 +24,7 @@ fun runExtensionFunctionSample() {
     processText(text = "Hello") { println(length) }
 }
 
-fun String.printLength() {
+fun String.printLengthIfNotBlank() {
     if (isNotBlank()) {
         println(length)
     }
