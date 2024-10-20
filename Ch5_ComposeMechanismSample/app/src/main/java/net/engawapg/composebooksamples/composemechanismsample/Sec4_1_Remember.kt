@@ -14,12 +14,12 @@ fun RememberKeySample1() {
     Column {
         var x by remember { mutableIntStateOf(0) }
         Button(onClick = { x++ }) { Text("Change x") }
-        RandomText1(x = x)
+        RandomText(x = x)
     }
 }
 
 @Composable
-fun RandomText1(x: Int) {
+fun RandomText(x: Int) {
     val y = remember { Math.random() }
     Text("x=$x, y=$y")
 }
@@ -31,12 +31,12 @@ fun RememberKeySample2() {
         var key by remember { mutableIntStateOf(0) }
         Button(onClick = { x++ }) { Text("Change x") }
         Button(onClick = { key++ }) { Text("Change key") }
-        RandomText2(x = x, key = key)
+        RandomText(x = x, key = key)
     }
 }
 
 @Composable
-fun RandomText2(x: Int, key: Int) {
+fun RandomText(x: Int, key: Int) {
     val y = remember(key) { Math.random() }
     Text("x=$x, y=$y key=$key")
 }
