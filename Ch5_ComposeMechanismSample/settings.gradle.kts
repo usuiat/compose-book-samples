@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ch5_ComposeMechanismSample"
 include(":app")
-include(":coroutinessample")
