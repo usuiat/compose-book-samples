@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ch6_DesignPattern"
 include(":app")
-include(":flowsample")

@@ -84,6 +84,10 @@ private val samples = listOf(
         content = { ColorfulBoxSample() }
     ),
     Sample(
+        name = "Flowのサンプル",
+        content = { FlowSamples() }
+    ),
+    Sample(
         name = "TODOリスト",
         content = { ToDoRoute() }
     ),
