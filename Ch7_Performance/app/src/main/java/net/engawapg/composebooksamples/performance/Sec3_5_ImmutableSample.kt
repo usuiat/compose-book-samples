@@ -31,7 +31,7 @@ class UserModel {
                 name = "User $it",
                 iconUrl = URL("https://example.com/user$it.png")
             )
-        }.reversed()
+        }.reversed() // 順序を入れ替えるコードを追加
     }
     fun addUser() {
         numOfUsers++
