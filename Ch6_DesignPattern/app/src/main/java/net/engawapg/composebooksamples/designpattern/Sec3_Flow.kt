@@ -77,13 +77,10 @@ fun StateFlowSample() {
 
     Button(
         onClick = {
-            // 値の書き込み
-            flow.value = 1
-            // 値の読み取り
-            println("value=${flow.value}")
+            flow.value = 1 // 値の書き込み
+            println("value=${flow.value}") // 値の読み取り
 
-            // 値の更新
-            flow.update { it + 1 }
+            flow.update { it + 1 } // 値の更新
             println("value=${flow.value}")
         }
     ) {
