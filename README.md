@@ -43,4 +43,4 @@ Ch8_ComposeTest|第8章|商品の数量を入力する`QuantityPicker`コンポ�
 
 ## ライセンス
 
-TODO
+このリポジトリ内のコードは全てMITライセンスのもとで公開します。
