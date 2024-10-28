@@ -23,12 +23,12 @@ https://gihyo.jp/book/2024/978-4-297-14488-3
 ソースコードをcloneまたはダウンロードしたら、Android Studioでプロジェクトを開きます。
 リポジトリのルートディレクトリに配置されている「Ch〜」で始まるディレクトリがプロジェクトです。
 
-![プロジェクトを開く](doc/how_to_open_project.png)
+<img width="640" alt="プロジェクトを開く" src="doc/how_to_open_project.png">
 
 各プロジェクトには実行可能なアプリ（`app`モジュール）が含まれています。
 プロジェクトの読み込みが完了したら「Run」ボタンをクリックしてアプリを実行します。
 
-![アプリを実行する](doc/how_to_run_app.png)
+<img width="320" alt="アプリを実行する" src="doc/how_to_run_app.png">
 
 ### サンプルアプリの構成
 
