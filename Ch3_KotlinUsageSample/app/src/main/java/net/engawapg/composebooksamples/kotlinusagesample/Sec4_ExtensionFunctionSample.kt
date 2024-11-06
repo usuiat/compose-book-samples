@@ -30,7 +30,7 @@ fun String.printLengthIfNotBlank() {
     }
 }
 
-class PrintLengthScope() {
+class PrintLengthScope {
     fun String.printLength() {
         println(length)
     }
