@@ -5,15 +5,21 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -25,16 +31,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeMechanismSampleTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                ) { innerPadding ->
-                    App(modifier = Modifier.padding(innerPadding))
-                }
+                App()
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun App(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
@@ -44,101 +47,167 @@ private fun App(modifier: Modifier = Modifier) {
         modifier = modifier
     ) {
         composable(route = "SampleList") {
-            LazyColumn {
-                items(samples) { sample ->
-                    ListItem(
-                        headlineContent = { Text(sample.name) },
-                        modifier = Modifier.clickable {
-                            navController.navigate(sample.name)
-                        }
+            Scaffold(
+                topBar = {
+                    CenterAlignedTopAppBar(
+                        title = { Text("第5章") }
                     )
+                },
+            ) { innerPadding ->
+                LazyColumn(modifier = Modifier.padding(innerPadding)) {
+                    for ((section, samples) in samples) {
+                        item {
+                            Text(
+                                text = "5.$section",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding(
+                                    start = 16.dp,
+                                    top = 32.dp,
+                                    bottom = 8.dp
+                                )
+                            )
+                        }
+                        items(samples) { sample ->
+                            ListItem(
+                                headlineContent = { Text(sample.title) },
+                                modifier = Modifier.clickable {
+                                    navController.navigate(sample.route)
+                                }
+                            )
+                        }
+                    }
                 }
             }
         }
-        for (sample in samples) {
-            composable(route = sample.name) {
-                sample.content()
+        for (section in samples) {
+            for (sample in section.value) {
+                composable(route = sample.route) {
+                    Scaffold(Modifier.fillMaxSize()) { innerPadding ->
+                        Box(Modifier.padding(innerPadding)) {
+                            sample.content()
+                        }
+                    }
+                }
             }
         }
     }
 }
 
 private class Sample(
-    val name: String,
+    val section: Int,
+    val title: String,
+    val route: String,
     val content: @Composable () -> Unit
 )
 
 private val samples = listOf(
     Sample(
-        name = "再コンポーズの起点と範囲およびスキップ",
+        section = 2,
+        title = "再コンポーズの起点、範囲、スキップ",
+        route = "RecomposeScopeSample",
         content = { RecomposeScopeSample() }
     ),
     Sample(
-        name = "再コンポーズによるコンポジションの構造の変更",
+        section = 2,
+        title = "コンポジションの構造の変更",
+        route = "CompositionTreeChangeSample",
         content = { CompositionTreeChangeSample() }
     ),
     Sample(
-        name = "Strong Skipping Modeで正しく動作するように修正",
+        section = 3,
+        title = "Strong Skipping Modeが有効かどうかで挙動が変わる例と修正方法",
+        route = "StrongSkippingModeSample",
         content = { SkippingModeSample() }
     ),
     Sample(
-        name = "rememberにkeyを指定しない場合",
+        section = 4,
+        title = "keyを指定せずにrememberを利用する例",
+        route = "RememberWithoutKeySample",
         content = { RememberKeySample1() }
     ),
     Sample(
-        name = "rememberにkeyを指定する場合",
+        section = 4,
+        title = "keyを指定してrememberを利用する例",
+        route = "RememberWithKeySample",
         content = { RememberKeySample2() }
     ),
     Sample(
-        name = "rememberを使わずにStateを使うとうまく動かない例",
+        section = 4,
+        title = "rememberを使わずにStateを使うとうまく動かない例",
+        route = "StateWithoutRememberSample",
         content = { WithoutRememberSample() }
     ),
     Sample(
-        name = "基本的なrememberSaveableの利用例",
+        section = 4,
+        title = "基本的なrememberSaveableの利用例",
+        route = "BasicRememberSaveableSample",
         content = { RememberSaveableSample() }
     ),
     Sample(
-        name = "Parcelizeアノテーションの利用例",
+        section = 4,
+        title = "ParcelizeによるrememberSaveableへの対応例",
+        route = "ParcelableClassUsageSample",
         content = { ParcelableClassUsageSample() }
     ),
     Sample(
-        name = "独自のSaverの実装例",
+        section = 4,
+        title = "独自のSaverによるrememberSaveableへの対応例",
+        route = "CustomSaverUsageSample",
         content = { SaverUsageSample() }
     ),
     Sample(
-        name = "SideEffectの例",
+        section = 6,
+        title = "SideEffectの利用例",
+        route = "SideEffectSample",
         content = { SideEffectSample() }
     ),
     Sample(
-        name = "LaunchedEffectの例",
+        section = 6,
+        title = "LaunchedEffectの利用例",
+        route = "LaunchedEffectSample",
         content = { LaunchedEffectSample() }
     ),
     Sample(
-        name = "DisposableEffectの例",
+        section = 6,
+        title = "DisposableEffectの利用例",
+        route = "DisposableEffectSample",
         content = { DisposableEffectSample() }
     ),
     Sample(
-        name = "rememberCoroutineScopeの例",
+        section = 6,
+        title = "rememberCoroutineScopeの利用例",
+        route = "RememberCoroutineScopeSample",
         content = { CoroutineScopeSample() }
     ),
     Sample(
-        name = "rememberUpdatedStateの例",
+        section = 6,
+        title = "rememberUpdatedStateの利用例",
+        route = "RememberUpdatedStateSample",
         content = { RememberUpdatedStateSample() }
     ),
     Sample(
-        name = "Composeの作用と副作用の境界",
+        section = 6,
+        title = "Composeの作用と副作用の境界を説明する例",
+        route = "SideEffectBoundarySample",
         content = { DelayedCounter() }
     ),
     Sample(
-        name = "単方向データフロー",
+        section = 7,
+        title = "単方向データフローのサンプル",
+        route = "UdfSample",
         content = { UdfSample() }
     ),
     Sample(
-        name = "CompositionLocalの定義",
+        section = 7,
+        title = "CompositionLocalを定義する例",
+        route = "CompositionLocalSample",
         content = { CompositionLocalSample() }
     ),
     Sample(
-        name = "CompositionLocalの上書き",
+        section = 7,
+        title = "CompositionLocalの値を上書きする例",
+        route = "CompositionLocalProviderSample",
         content = { CompositionLocalProviderSample() }
     )
-)
+).groupBy { it.section }.toSortedMap()
