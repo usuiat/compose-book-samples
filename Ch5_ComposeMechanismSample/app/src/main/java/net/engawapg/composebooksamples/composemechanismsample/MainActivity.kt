@@ -4,25 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import net.engawapg.composebooksamples.composemechanismsample.ui.theme.ComposeMechanismSampleTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,77 +12,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeMechanismSampleTheme {
-                App()
+                App(chapter = 5, samples = chapter5Samples)
             }
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun App(modifier: Modifier = Modifier) {
-    val navController = rememberNavController()
-    NavHost(
-        navController = navController,
-        startDestination = "SampleList",
-        modifier = modifier
-    ) {
-        composable(route = "SampleList") {
-            Scaffold(
-                topBar = {
-                    CenterAlignedTopAppBar(
-                        title = { Text("第5章") }
-                    )
-                },
-            ) { innerPadding ->
-                LazyColumn(modifier = Modifier.padding(innerPadding)) {
-                    for ((section, samples) in samples) {
-                        item {
-                            Text(
-                                text = "5.$section",
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(
-                                    start = 16.dp,
-                                    top = 32.dp,
-                                    bottom = 8.dp
-                                )
-                            )
-                        }
-                        items(samples) { sample ->
-                            ListItem(
-                                headlineContent = { Text(sample.title) },
-                                modifier = Modifier.clickable {
-                                    navController.navigate(sample.route)
-                                }
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        for (section in samples) {
-            for (sample in section.value) {
-                composable(route = sample.route) {
-                    Scaffold(Modifier.fillMaxSize()) { innerPadding ->
-                        Box(Modifier.padding(innerPadding)) {
-                            sample.content()
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-private class Sample(
-    val section: Int,
-    val title: String,
-    val route: String,
-    val content: @Composable () -> Unit
-)
-
-private val samples = listOf(
+private val chapter5Samples = listOf(
     Sample(
         section = 2,
         title = "再コンポーズの起点、範囲、スキップ",
