@@ -4,19 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import net.engawapg.composebooksamples.designpattern.ui.theme.DesignPatternTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,70 +12,47 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DesignPatternTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    App(modifier = Modifier.padding(innerPadding))
-                }
+                App(chapter = 6, samples = chapter6Samples)
             }
         }
     }
 }
 
-@Composable
-private fun App(modifier: Modifier = Modifier) {
-    val navController = rememberNavController()
-    NavHost(
-        navController = navController,
-        startDestination = "SampleList",
-        modifier = modifier
-    ) {
-        composable(route = "SampleList") {
-            LazyColumn {
-                items(samples) { sample ->
-                    ListItem(
-                        headlineContent = { Text(sample.name) },
-                        modifier = Modifier.clickable {
-                            navController.navigate(sample.name)
-                        }
-                    )
-                }
-            }
-        }
-        for (sample in samples) {
-            composable(route = sample.name) {
-                sample.content()
-            }
-        }
-    }
-}
-
-private class Sample(
-    val name: String,
-    val content: @Composable () -> Unit
-)
-
-private val samples = listOf(
+private val chapter6Samples = listOf(
     Sample(
-        name = "ステートフルなスイッチ",
+        section = 1,
+        title = "ステートフルなスイッチ",
+        route = "MySwitchSample1",
         content = { MySwitchSample1() }
     ),
     Sample(
-        name = "ステートレスなスイッチ",
+        section = 1,
+        title = "ステートレスなスイッチ",
+        route = "MySwitchSample2",
         content = { MySwitchSample2() }
     ),
     Sample(
-        name = "通知設定のサンプル",
+        section = 1,
+        title = "ステートレスなスイッチを利用した通知設定のUI作成例",
+        route = "NotificationSettingsSample",
         content = { NotificationSettings() }
     ),
     Sample(
-        name = "カラフルなボックス",
+        section = 2,
+        title = "クリックするたびに色が変化する矩形の例",
+        route = "ColorfulBoxSample",
         content = { ColorfulBoxSample() }
     ),
     Sample(
-        name = "Flowのサンプル",
+        section = 3,
+        title = "Flowのサンプル",
+        route = "FlowSamples",
         content = { FlowSamples() }
     ),
     Sample(
-        name = "TODOリスト",
+        section = 4,
+        title = "TODOリストの実装例",
+        route = "ToDoRoute",
         content = { ToDoRoute() }
     ),
-)
+).groupBy { it.section }.toSortedMap()

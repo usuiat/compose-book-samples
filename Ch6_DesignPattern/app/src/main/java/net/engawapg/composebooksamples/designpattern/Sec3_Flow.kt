@@ -17,7 +17,6 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun FlowSamples() {
-    val coroutineScope = rememberCoroutineScope()
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         FlowSample()
         SharedFlowSample()
