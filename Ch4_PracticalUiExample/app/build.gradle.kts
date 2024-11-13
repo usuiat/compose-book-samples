@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "net.engawapg.composebooksamples.practicaluiexample"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "net.engawapg.composebooksamples.practicaluiexample"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
